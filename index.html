@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Tracker with Payment Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Income Tracker by PG with Payment Details</h1>
+
+<!-- Income Form -->
+<form id="incomeForm">
+    <label for="pg">PG:</label>
+    <select id="pg">
+        <option value="PG 1">PG 1</option>
+        <option value="PG 2">PG 2</option>
+    </select><br>
+
+    <label for="guestName">Guest Name:</label>
+    <input type="text" id="guestName" placeholder="Guest name" required><br>
+
+    <label for="roomNumber">Room Number:</label>
+    <input type="text" id="roomNumber" placeholder="Room number" required><br>
+
+    <label for="incomeAmount">Amount:</label>
+    <input type="number" id="incomeAmount" placeholder="Income amount" required><br>
+
+    <label for="incomeDate">Date:</label>
+    <input type="date" id="incomeDate" required><br>
+
+    <label for="paymentStatus">Payment Status:</label>
+    <select id="paymentStatus" required>
+        <option value="Paid">Paid</option>
+        <option value="Unpaid">Unpaid</option>
+    </select><br>
+
+    <label for="monthFilter">Month:</label>
+    <select id="monthFilter"></select><br>
+
+    <button type="submit">Add Income</button>
+</form>
+
+<!-- Display total income for each PG -->
+<h3>Total Income for PG 1: <span id="totalIncomePG1">₹0.00</span></h3>
+<h3>Total Income for PG 2: <span id="totalIncomePG2">₹0.00</span></h3>
+
+<!-- Section to display the list of people who have paid -->
+<h2>Payment Details for the Month</h2>
+<div id="paidIncomeList"></div>
+
+<!-- Graph for Income -->
+<canvas id="incomeChart" width="400" height="200"></canvas>
+
+<!-- Toast Notification -->
+<div id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

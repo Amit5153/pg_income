@@ -1,0 +1,179 @@
+/* Universal reset for consistent styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gradient background for the entire page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #004e92 0%, #00b09b 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styling for the main header */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+}
+
+/* Form styling */
+form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input fields styling */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1em;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Button styling with gradient */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    background: linear-gradient(45deg, #0072ff, #00c6ff);
+    color: #8e3535;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for total income display */
+h3 {
+    margin: 15px 0;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+}
+
+/* Toast notification styling */
+#toast {
+    visibility: hidden;
+    max-width: 90%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    font-size: 1em;
+    transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#toast.show {
+    visibility: visible;
+    transform: translate(-50%, -10px);
+}
+
+/* Styling for the canvas chart */
+canvas {
+    margin-top: 30px;
+    max-width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive form width */
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+    }
+}
+
+/* Keyframes for fade in/out animation */
+@keyframes fadein {
+    from { bottom: 0; opacity: 0; } 
+    to { bottom: 30px; opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { bottom: 30px; opacity: 1; } 
+    to { bottom: 0; opacity: 0; }
+}
+/* Styling for month, paid, and unpaid text */
+button, .month-text, .paid-text, .unpaid-text {
+    color: #fff; /* Ensure text is white */
+    background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background for contrast */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 15px; /* Padding around text */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* On hover, change background and text color */
+button:hover, .month-text:hover, .paid-text:hover, .unpaid-text:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Lighten background on hover */
+    color: #000; /* Change text color to black for contrast */
+}
+
+/* Active state for buttons when clicked */
+button:active, .month-text:active, .paid-text:active, .unpaid-text:active {
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly darker background on click */
+    color: #000; /* Keep text visible */
+}
+
+/* Styling for visibility */
+.month-text, .paid-text, .unpaid-text {
+    display: inline-block; /* Ensure they act like buttons */
+    margin: 5px; /* Spacing around text */
+}
+
+/* Optional: If you want to emphasize the month when clicked */
+.month-active {
+    background-color: rgba(255, 0, 0, 0.6); /* Red background for active month */
+    color: #fff; /* Ensure text is visible */
+}
